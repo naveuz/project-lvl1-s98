@@ -1,4 +1,4 @@
-#!/usr/bin/node
-import readLine from '..';
+#!/usr/bin/env node
+import readLine from '../';
 
 readLine();
