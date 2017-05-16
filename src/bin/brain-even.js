@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import evenNumber from '../brain-even';
+import game from '../';
+import even from '../games/brain-even';
 
-evenNumber();
+const greeting = 'Answer "yes" if number even otherwise answer "no".';
+game(greeting, even);
