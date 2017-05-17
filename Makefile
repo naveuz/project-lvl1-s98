@@ -2,9 +2,9 @@ install:
 	npm install
 
 start:
-	npm run babel-node -- src/bin/brain-even.js
-	npm run babel-node -- src/bin/brain-calc.js
-	npm run babel-node -- src/bin/brain-gcd.js
+	npm run babel-node -- src/bin/even.js
+	npm run babel-node -- src/bin/calc.js
+	npm run babel-node -- src/bin/gcd.js
 
 publish:
 	npm publish
