@@ -4,22 +4,24 @@ export default () => {
   const secondNumber = getRandomInt(0, 100);
   const operators = ['+', '-', '*'];
   const operator = operators[getRandomInt(0, operators.length - 1)];
-  let result = 0;
+  const greeting = 'What is the result of the expression?';
+  let correct;
+  let question;
   switch (operator) {
     case '+':
-      result = firstNumber + secondNumber;
-      console.log(`Question: ${firstNumber} + ${secondNumber}`);
+      correct = firstNumber + secondNumber;
+      question = `${firstNumber} + ${secondNumber}`;
       break;
     case '-':
-      result = firstNumber - secondNumber;
-      console.log(`Question: ${firstNumber} - ${secondNumber}`);
+      correct = firstNumber - secondNumber;
+      question = `${firstNumber} - ${secondNumber}`;
       break;
     case '*':
-      result = firstNumber * secondNumber;
-      console.log(`Question: ${firstNumber} * ${secondNumber}`);
+      correct = firstNumber * secondNumber;
+      question = `${firstNumber} * ${secondNumber}`;
       break;
     default:
       break;
   }
-  return String(result);
+  return { greeting, correct, question };
 };
