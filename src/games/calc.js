@@ -1,48 +1,30 @@
 import game from '../';
-import { randOperator, randNumber } from '../math';
+import { getRandOperator, getRandNumber } from '../math';
 
 const greeting = 'What is the result of the expression?';
-const getQuestion = () => {
-  const firstNumber = randNumber();
-  const secondNumber = randNumber();
-  const operator = randOperator();
-  return [firstNumber, secondNumber, operator];
-};
-const printQuestion = (question) => {
-  const [num1, num2, operator] = question;
-  let result;
+const calc = () => {
+  const firstNumber = getRandNumber(0, 100);
+  const secondNumber = getRandNumber(0, 100);
+  const operator = getRandOperator();
+  let question;
+  let answer;
   switch (operator) {
     case '+':
-      result = `${num1} + ${num2}`;
+      question = `${firstNumber} + ${secondNumber}`;
+      answer = firstNumber + secondNumber;
       break;
     case '-':
-      result = `${num1} - ${num2}`;
+      question = `${firstNumber} - ${secondNumber}`;
+      answer = firstNumber - secondNumber;
       break;
     case '*':
-      result = `${num1} * ${num2}`;
+      question = `${firstNumber} * ${secondNumber}`;
+      answer = firstNumber * secondNumber;
       break;
     default:
       break;
   }
-  return result;
-};
-const correctAnswer = (question) => {
-  const [num1, num2, operator] = question;
-  let correct;
-  switch (operator) {
-    case '+':
-      correct = num1 + num2;
-      break;
-    case '-':
-      correct = num1 - num2;
-      break;
-    case '*':
-      correct = num1 * num2;
-      break;
-    default:
-      break;
-  }
-  return correct;
+  return [question, answer];
 };
 
-export default () => game(greeting, getQuestion, correctAnswer, printQuestion);
+export default () => game(greeting, calc);

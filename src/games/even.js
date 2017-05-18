@@ -1,9 +1,11 @@
 import game from '../';
-import { randNumber, even } from '../math';
+import { getRandNumber, isEven } from '../math';
 
-const getQuestion = () => randNumber();
 const greeting = 'Answer "yes" if number even otherwise answer "no".';
-const correctAnswer = question => even(question);
-const printQuestion = question => String(question);
+const even = () => {
+  const number = getRandNumber(0, 100);
+  const answer = isEven(number) ? 'yes' : 'no';
+  return [number, answer];
+};
 
-export default () => game(greeting, getQuestion, correctAnswer, printQuestion);
+export default () => game(greeting, even);

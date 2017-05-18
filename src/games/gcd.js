@@ -1,19 +1,13 @@
 import game from '../';
-import { randNumber, commonDivisor } from '../math';
+import { getRandNumber, getGcd } from '../math';
 
 const greeting = 'Find the greatest common divisor of given numbers.';
-const getQuestion = () => {
-  const firstNumber = randNumber();
-  const secondNumber = randNumber();
-  return [firstNumber, secondNumber];
-};
-const correctAnswer = (question) => {
-  const [num1, num2] = question;
-  return commonDivisor(num1, num2);
-};
-const printQuestion = (question) => {
-  const [num1, num2] = question;
-  return `${num1} ${num2}`;
+const gcd = () => {
+  const firstNumber = getRandNumber(0, 100);
+  const secondNumber = getRandNumber(0, 100);
+  const answer = getGcd(firstNumber, secondNumber);
+  const question = `${firstNumber} ${secondNumber}`;
+  return [question, answer];
 };
 
-export default () => game(greeting, getQuestion, correctAnswer, printQuestion);
+export default () => game(greeting, gcd);
