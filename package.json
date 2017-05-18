@@ -1,6 +1,6 @@
 {
   "name": "naveuz-brain-games",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "brain-even": "dist/bin/even.js",
     "brain-calc": "dist/bin/calc.js",
     "brain-gcd": "dist/bin/gcd.js",
-    "brain-balance": "dist/bin/balance.js"
+    "brain-balance": "dist/bin/balance.js",
+    "brain-progression": "dist/bin/progression.js"
   },
   "repository": {
     "type": "git",
