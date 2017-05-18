@@ -7,6 +7,7 @@ start:
 	npm run babel-node -- src/bin/gcd.js
 	npm run babel-node -- src/bin/balance.js
 	npm run babel-node -- src/bin/progression.js
+	npm run babel-node -- src/bin/prime.js
 
 publish:
 	npm publish
