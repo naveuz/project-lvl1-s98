@@ -1,8 +1,5 @@
 export const getRandNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
-const operators = ['+', '-', '*'];
-export const getRandOperator = () => operators[getRandNumber(0, operators.length - 1)];
-
 export const getGcd = (num1, num2) => {
   const min = Math.min(num1, num2);
   const max = Math.max(num1, num2);
