@@ -10,7 +10,13 @@ export const commonDivisor = (num1, num2) => {
   }
   return result;
 };
+export const even = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
+};
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const operators = ['+', '-', '*'];
-export const randOperator = operators[randomInt(0, operators.length - 1)];
+export const randOperator = () => operators[randomInt(0, operators.length - 1)];
 export const randNumber = () => randomInt(0, 100);

@@ -1,27 +1,48 @@
 import game from '../';
 import { randOperator, randNumber } from '../math';
 
-export default () => {
+const greeting = 'What is the result of the expression?';
+const getQuestion = () => {
   const firstNumber = randNumber();
   const secondNumber = randNumber();
-  const greeting = 'What is the result of the expression?';
-  let correct;
-  let question;
-  switch (randOperator) {
+  const operator = randOperator();
+  return [firstNumber, secondNumber, operator];
+};
+const printQuestion = (question) => {
+  const [num1, num2, operator] = question;
+  let result;
+  switch (operator) {
     case '+':
-      correct = firstNumber + secondNumber;
-      question = `${firstNumber} + ${secondNumber}`;
+      result = `${num1} + ${num2}`;
       break;
     case '-':
-      correct = firstNumber - secondNumber;
-      question = `${firstNumber} - ${secondNumber}`;
+      result = `${num1} - ${num2}`;
       break;
     case '*':
-      correct = firstNumber * secondNumber;
-      question = `${firstNumber} * ${secondNumber}`;
+      result = `${num1} * ${num2}`;
       break;
     default:
       break;
   }
-  return game(greeting, correct, question);
+  return result;
 };
+const correctAnswer = (question) => {
+  const [num1, num2, operator] = question;
+  let correct;
+  switch (operator) {
+    case '+':
+      correct = num1 + num2;
+      break;
+    case '-':
+      correct = num1 - num2;
+      break;
+    case '*':
+      correct = num1 * num2;
+      break;
+    default:
+      break;
+  }
+  return correct;
+};
+
+export default () => game(greeting, getQuestion, correctAnswer, printQuestion);
