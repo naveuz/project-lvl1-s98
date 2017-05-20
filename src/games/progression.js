@@ -1,3 +1,4 @@
+import { cons } from 'hexlet-pairs';
 import game from '../';
 import { getRandNumber } from '../math';
 
@@ -14,7 +15,7 @@ const progression = () => {
   arr[unknown] = '..';
   const question = arr.join(' ');
   const answer = first + (diff * unknown);
-  return [question, answer];
+  return cons(question, answer);
 };
 
 export default () => game(greeting, progression);

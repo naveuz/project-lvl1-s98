@@ -1,3 +1,4 @@
+import { cons } from 'hexlet-pairs';
 import game from '../';
 import { getRandNumber } from '../math';
 
@@ -26,7 +27,7 @@ const calc = () => {
     default:
       break;
   }
-  return [question, answer];
+  return cons(question, answer);
 };
 
 export default () => game(greeting, calc);

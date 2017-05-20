@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 const game = (greeting, getDataGame) => {
   console.log('Welcome to the Brain Games!');
@@ -7,13 +8,12 @@ const game = (greeting, getDataGame) => {
   console.log(`Hello, ${userName}!`);
   for (let i = 0; i < 3; i += 1) {
     const data = getDataGame();
-    const [question, answer] = data;
-    console.log(`Question: ${question}`);
+    console.log(`Question: ${car(data)}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === String(answer)) {
+    if (userAnswer === String(cdr(data))) {
       console.log('Correct!');
     } else {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!`);
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${cdr(data)}'.\nLet's try again, ${userName}!`);
     }
   }
   return console.log(`Congratulations, ${userName}!`);
